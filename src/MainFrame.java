@@ -13,12 +13,14 @@ public class MainFrame extends JFrame{
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");
-		setDefaultCloseOperation(HIDE_ON_CLOSE);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setSize(500, 600);
 		addElements();
 	}
 	public MainFrame(String title) {
 		super(title);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setSize(500, 600);
 		addElements();
 	}
 	public void addElements(){
@@ -33,7 +35,8 @@ public class MainFrame extends JFrame{
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		MainFrame main = new MainFrame("BOO!");
+		MainFrame main = new MainFrame();
+		main.setVisible(true);
 	}
 
 }

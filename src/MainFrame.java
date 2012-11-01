@@ -10,6 +10,7 @@ public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
 	private ColorsPanel panel1;
 	private NamesPanel panel2;
+	private ShowPanel panelzzzz;//TODO rename
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");

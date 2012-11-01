@@ -11,8 +11,8 @@ import javax.swing.JMenuItem;
 public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
 	private ColorsPanel panel1 = new ColorsPanel();
-	private NamesPanel panel2 = new NamesPanel();
-	private ShowPanel panel3 = new ShowPanel();//TODO rename
+	private NamesPanel panel3 = new NamesPanel();
+	private ShowPanel panel2 = new ShowPanel();//TODO rename
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");
@@ -28,14 +28,15 @@ public class MainFrame extends JFrame{
 	}
 	public void addElements(){
 		JMenuBar menubar=new JMenuBar();
-		JMenu fileMenu = new JMenu();
-		setLayout(new FlowLayout()); 
+		JMenu fileMenu = new JMenu("File");
 		JMenuItem Exit = new JMenuItem("Exit");
 		fileMenu.add(Exit);
 		menubar.add(fileMenu);
-		this.add(menubar);
+		this.setJMenuBar(menubar);
+		setLayout(new FlowLayout()); 
 		this.add(panel1, FlowLayout.LEFT);
 		this.add(panel2, FlowLayout.LEFT);
+		this.add(panel3, FlowLayout.LEFT);
 	}
 	/**
 	 * @param args

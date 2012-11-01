@@ -13,6 +13,8 @@ public class ShowPanel extends JPanel {
 			carr[i] += iarr[i];
 		}
 		chromos=new Color(carr[0], carr[1], carr[2]);
+		this.setBackground(chromos);
+		
 	}
 	public void subtractColor(Color in){
 		float[] carr = new float[3];
@@ -22,5 +24,6 @@ public class ShowPanel extends JPanel {
 			carr[i] -= iarr[i];
 		}
 		chromos=new Color(carr[0], carr[1], carr[2]);
+		this.setBackground(chromos);
 	}
 }

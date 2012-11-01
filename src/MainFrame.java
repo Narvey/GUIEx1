@@ -1,4 +1,5 @@
 import java.awt.Button;
+import java.awt.FlowLayout;
 import java.awt.TextField;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -9,7 +10,8 @@ import javax.swing.JMenuItem;
 public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
 	private ColorsPanel panel1;
-	private NamesPanel panel2;
+	private ShowPanel panel2;
+	private NamesPanel panel3;
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");
@@ -27,8 +29,11 @@ public class MainFrame extends JFrame{
 		JMenuBar menus=new JMenuBar();
 		JMenu fileMenu = new JMenu();
 		JMenuItem Exit = new JMenuItem("");
+		setLayout(new FlowLayout());
 		menus.add(fileMenu);
-		this.add(new TextField());
+		this.add(panel1);
+		this.add(panel2);
+		this.add(panel3);
 		this.getComponent(0).setEnabled(false);
 	}
 	/**

@@ -1,8 +1,10 @@
 import java.awt.LayoutManager;
 import java.awt.Panel;
 
+import javax.swing.JPanel;
 
-public class NamesPanel extends Panel {
+
+public class NamesPanel extends JPanel {
 
 	public NamesPanel() {
 		// TODO Auto-generated constructor stub
@@ -13,12 +15,5 @@ public class NamesPanel extends Panel {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }

@@ -1,9 +1,6 @@
 import java.awt.Button;
 import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 import java.awt.MenuBar;
->>>>>>> origin/master
 import java.awt.TextField;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -13,15 +10,9 @@ import javax.swing.JMenuItem;
 
 public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
-<<<<<<< HEAD
-	private ColorsPanel panel1;
-	private ShowPanel panel2;
-	private NamesPanel panel3;
-=======
 	private ColorsPanel panel1 = new ColorsPanel();
 	private NamesPanel panel2 = new NamesPanel();
-	private ShowPanel panelzzzz = new ShowPanel();//TODO rename
->>>>>>> origin/master
+	private ShowPanel panel3 = new ShowPanel();//TODO rename
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");
@@ -38,22 +29,13 @@ public class MainFrame extends JFrame{
 	public void addElements(){
 		JMenuBar menubar=new JMenuBar();
 		JMenu fileMenu = new JMenu();
-<<<<<<< HEAD
-		JMenuItem Exit = new JMenuItem("");
-		setLayout(new FlowLayout());
-		menus.add(fileMenu);
-		this.add(panel1);
-		this.add(panel2);
-		this.add(panel3);
-=======
+		setLayout(new FlowLayout()); 
 		JMenuItem Exit = new JMenuItem("Exit");
 		fileMenu.add(Exit);
 		menubar.add(fileMenu);
 		this.add(menubar);
 		this.add(panel1, FlowLayout.LEFT);
 		this.add(panel2, FlowLayout.LEFT);
->>>>>>> origin/master
-		this.getComponent(0).setEnabled(false);
 	}
 	/**
 	 * @param args

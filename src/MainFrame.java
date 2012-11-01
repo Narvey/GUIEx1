@@ -1,4 +1,6 @@
 import java.awt.Button;
+import java.awt.FlowLayout;
+import java.awt.MenuBar;
 import java.awt.TextField;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -8,9 +10,9 @@ import javax.swing.JMenuItem;
 
 public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
-	private ColorsPanel panel1;
-	private NamesPanel panel2;
-	private ShowPanel panelzzzz;//TODO rename
+	private ColorsPanel panel1 = new ColorsPanel();
+	private NamesPanel panel2 = new NamesPanel();
+	private ShowPanel panelzzzz = new ShowPanel();//TODO rename
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");
@@ -25,18 +27,21 @@ public class MainFrame extends JFrame{
 		addElements();
 	}
 	public void addElements(){
-		JMenuBar menus=new JMenuBar();
+		JMenuBar menubar=new JMenuBar();
 		JMenu fileMenu = new JMenu();
-		JMenuItem Exit = new JMenuItem("");
-		menus.add(fileMenu);
-		this.add(new TextField());
+		JMenuItem Exit = new JMenuItem("Exit");
+		fileMenu.add(Exit);
+		menubar.add(fileMenu);
+		this.add(menubar);
+		this.add(panel1, FlowLayout.LEFT);
+		this.add(panel2, FlowLayout.LEFT);
 		this.getComponent(0).setEnabled(false);
 	}
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		MainFrame main = new MainFrame();
+		MainFrame main = new MainFrame("Interesting proggy");
 		main.setVisible(true);
 	}
 

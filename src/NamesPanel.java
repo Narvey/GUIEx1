@@ -18,7 +18,7 @@ public class NamesPanel extends JPanel {
 	
 	
 	public NamesPanel() {
-		setSize(400, HEIGHT);
+		setSize(400, 400);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 3, 15));
 		
 		setBorder(BorderFactory.createEtchedBorder());

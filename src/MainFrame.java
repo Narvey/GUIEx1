@@ -19,20 +19,20 @@ import javax.swing.JPanel;
 public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
 	private ShowPanel panel2 = new ShowPanel();
-	private ColorsPanel panel1 = new ColorsPanel(panel2);
-	private NamesPanel panel3 = new NamesPanel();
+	private ColorsPanel panel3 = new ColorsPanel(panel2);
+	private NamesPanel panel1 = new NamesPanel();
 	
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(500, 600);
+		this.setSize(656, 200);
 		addElements();
 	}
 	public MainFrame(String title) {
 		super(title);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(400, 500);
+		this.setSize(656, 200);
 		addElements();
 	}
 	public void addElements(){
@@ -49,15 +49,16 @@ public class MainFrame extends JFrame{
 		menubar.add(fileMenu);
 		this.setJMenuBar(menubar);
 		setLayout(new FlowLayout()); 
-		this.add(panel1, FlowLayout.LEFT);
-		this.add(panel2, FlowLayout.LEFT);
-		this.add(panel3, FlowLayout.LEFT);
+		
+		this.add(panel1,FlowLayout.LEFT);
+		this.add(panel2);
+		this.add(panel3);
 		JPanel panel4 = new JPanel();
 		panel4.setLayout(new BorderLayout());
 		panel4.add(new Label("Do some checks:"),BorderLayout.NORTH);
 		panel4.add(new Checkbox("Check me."),BorderLayout.WEST);
 		panel4.add(new Checkbox("Or me!"),BorderLayout.EAST);
-		this.add(panel4,FlowLayout.LEFT);
+		this.add(panel4);
 	} 
 	/**
 	 * @param args

@@ -39,6 +39,7 @@ public class ColorsPanel extends JPanel {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			otherPanel.setColor(chosenColor);
+			otherPanel.setText(getParent().getWidth()+","+getParent().getHeight());
 			//else otherPanel.subtractColor(chosenColor);			
 		}
 	}

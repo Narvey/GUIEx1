@@ -2,6 +2,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.LayoutManager;
 
 import javax.swing.BorderFactory;
@@ -30,6 +31,7 @@ public class NamesPanel extends JPanel {
 		add(name1);
 		JLabel nameLabel2 = new JLabel("Antagonist");
 		JTextField name2 = new JTextField("Clu", 10);
+		name2.setFont(new Font("Courier", Font.ITALIC, 15));
 		add(nameLabel2);
 		add(name2);
 		//text wrap is not working!!

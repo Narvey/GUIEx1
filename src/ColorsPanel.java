@@ -1,57 +1,46 @@
-import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputMethodEvent;
-import java.awt.event.InputMethodListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 
 public class ColorsPanel extends JPanel {
-	Checkbox green = new Checkbox("Green");
-	Checkbox red = new Checkbox("Red");
-	Checkbox blue = new Checkbox("Blue");
+	JRadioButton green = new JRadioButton("Green");
+	JRadioButton red = new JRadioButton("Red");
+	JRadioButton blue = new JRadioButton("Blue");
+	ButtonGroup grp = new ButtonGroup();
 	ShowPanel otherPanel;
 	
 	public ColorsPanel(ShowPanel o) {
-		setBorder(BorderFactory.createTitledBorder("Pick one or more colors"));
-		add(green);
-		green.addInputMethodListener(new CheckboxListener(Color.GREEN));  //green.addActionListener(new CheckboxListener(Color.GREEN));
-		add(red);
-		green.addInputMethodListener(new CheckboxListener(Color.RED));
-		add(blue);
-		green.addInputMethodListener(new CheckboxListener(Color.BLUE));
+		setBorder(BorderFactory.createTitledBorder("Pick a color"));
 		otherPanel = o;
+		green.addActionListener(new RadioListener(Color.GREEN));  
+		red.addActionListener(new RadioListener(Color.RED));
+		blue.addActionListener(new RadioListener(Color.BLUE));
+		grp.add(green);
+		grp.add(red);
+		grp.add(blue);
+		add(green);
+		add(blue);
+		add(red);
 	}
-	private class CheckboxListener implements ActionListener, InputMethodListener{
+	private class RadioListener implements ActionListener{
 		Color chosenColor;
-		public CheckboxListener(Color chosenColor) {
+		public RadioListener(Color chosenColor) {
 			this.chosenColor = chosenColor;
 		}
 
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			otherPanel.setText("WORKS");			
-			if(((Checkbox)e.getSource()).getState())
-			otherPanel.addColor(chosenColor);
-			else otherPanel.subtractColor(chosenColor);
-
+		public void actionPerformed(ActionEvent arg0) {
+			otherPanel.setColor(chosenColor);
+			//else otherPanel.subtractColor(chosenColor);			
 		}
-
-		@Override
-		public void caretPositionChanged(InputMethodEvent event) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void inputMethodTextChanged(InputMethodEvent event) {
-			// TODO Auto-generated method stub
-			
-		}
-		
 	}
 
 }

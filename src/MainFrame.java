@@ -1,18 +1,24 @@
+import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.Checkbox;
 import java.awt.FlowLayout;
+import java.awt.Label;
 import java.awt.MenuBar;
+import java.awt.Panel;
 import java.awt.TextField;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 
 public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
-	private ColorsPanel panel1 = new ColorsPanel();
+	private ShowPanel panel2 = new ShowPanel();
+	private ColorsPanel panel1 = new ColorsPanel(panel2);
 	private NamesPanel panel3 = new NamesPanel();
-	private ShowPanel panel2 = new ShowPanel();//TODO rename
+	
 	
 	public MainFrame() {
 		super("Wow, someone forgot to set the window title!");
@@ -23,7 +29,7 @@ public class MainFrame extends JFrame{
 	public MainFrame(String title) {
 		super(title);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(500, 600);
+		this.setSize(400, 500);
 		addElements();
 	}
 	public void addElements(){
@@ -37,7 +43,13 @@ public class MainFrame extends JFrame{
 		this.add(panel1, FlowLayout.LEFT);
 		this.add(panel2, FlowLayout.LEFT);
 		this.add(panel3, FlowLayout.LEFT);
-	}
+		JPanel panel4 = new JPanel();
+		panel4.setLayout(new BorderLayout());
+		panel4.add(new Label("Do some checks:"),BorderLayout.NORTH);
+		panel4.add(new Checkbox("Check me."),BorderLayout.WEST);
+		panel4.add(new Checkbox("Or me!"),BorderLayout.EAST);
+		this.add(panel4,FlowLayout.LEFT);
+	} 
 	/**
 	 * @param args
 	 */

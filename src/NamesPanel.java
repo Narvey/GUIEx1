@@ -3,6 +3,7 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.LayoutManager;
 
 import javax.swing.BorderFactory;
@@ -20,8 +21,8 @@ public class NamesPanel extends JPanel {
 	
 	public NamesPanel() {
 		setSize(400, 400);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 3, 15));
-		
+		//setLayout(new FlowLayout(FlowLayout.LEFT, 3, 15));
+		setLayout(new GridLayout(2,4));
 		setBorder(BorderFactory.createEtchedBorder());
 		//setBorder(BorderFactory.createTitledBorder("The Players"));
 		
@@ -39,6 +40,7 @@ public class NamesPanel extends JPanel {
 		JTextField name3 = new JTextField("Sam Flynn", 10);
 		add(nameLabel3);
 		add(name3);
+		add(new JLabel());add(new JLabel());//fill last two.
 	}
 
 	public NamesPanel(LayoutManager layout) {

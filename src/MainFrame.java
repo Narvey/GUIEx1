@@ -6,6 +6,9 @@ import java.awt.Label;
 import java.awt.MenuBar;
 import java.awt.Panel;
 import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -36,6 +39,12 @@ public class MainFrame extends JFrame{
 		JMenuBar menubar=new JMenuBar();
 		JMenu fileMenu = new JMenu("File");
 		JMenuItem Exit = new JMenuItem("Exit");
+		Exit.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
 		fileMenu.add(Exit);
 		menubar.add(fileMenu);
 		this.setJMenuBar(menubar);

@@ -1,8 +1,7 @@
 import java.awt.Checkbox;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -17,25 +16,26 @@ public class ColorsPanel extends JPanel {
 	public ColorsPanel(ShowPanel o) {
 		setBorder(BorderFactory.createTitledBorder("Pick one or more colors"));
 		add(green);
-		green.addItemListener(new CheckboxListener(Color.GREEN));
+		green.addActionListener(new CheckboxListener(Color.GREEN));
 		add(red);
-		green.addItemListener(new CheckboxListener(Color.RED));
+		green.addActionListener(new CheckboxListener(Color.RED));
 		add(blue);
-		green.addItemListener(new CheckboxListener(Color.BLUE));
+		green.addActionListener(new CheckboxListener(Color.BLUE));
 		otherPanel = o;
 	}
-	private class CheckboxListener implements ItemListener{
+	private class CheckboxListener implements ActionListener{
 		Color chosenColor;
 		public CheckboxListener(Color chosenColor) {
 			this.chosenColor = chosenColor;
 		}
 
 		@Override
-		public void itemStateChanged(ItemEvent e) {
-			if(e.getStateChange()==e.SELECTED)
+		public void actionPerformed(ActionEvent e) {
+			otherPanel.setText("WORKS");			
+			if(((Checkbox)e.getSource()).getState())
 			otherPanel.addColor(chosenColor);
 			else otherPanel.subtractColor(chosenColor);
-			
+
 		}
 		
 	}

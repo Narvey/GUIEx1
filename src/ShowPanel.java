@@ -19,18 +19,7 @@ public class ShowPanel extends JPanel {
 		chromos = in;
 		setBackground(chromos);
 	}
-	/*
-	public void subtractColor(Color in){
-		float[] carr = new float[3];
-		float[] iarr = new float[3];
-		chromos.getRGBColorComponents(carr);
-		for(int i=0;i<3;i++){
-			carr[i] -= iarr[i];
-		}
-		chromos=new Color(carr[0], carr[1], carr[2]);
-		setBackground(chromos);
-	}
-	*/
+
 	public void setText(String text){
 		bigLabel.setText(text);
 	}

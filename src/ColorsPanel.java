@@ -10,7 +10,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-
+// ColorsPanel picks the color that goes around the text field 
 public class ColorsPanel extends JPanel {
 	JRadioButton green = new JRadioButton("Green");
 	JRadioButton red = new JRadioButton("Red");
@@ -40,8 +40,8 @@ public class ColorsPanel extends JPanel {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			otherPanel.setColor(chosenColor);
-			//otherPanel.setText(getParent().getWidth()+","+getParent().getHeight());
-			//else otherPanel.subtractColor(chosenColor);			
+			String picked = Integer.toString(chosenColor.getAlpha());
+			otherPanel.setText(picked);
 		}
 	}
 

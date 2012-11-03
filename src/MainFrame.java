@@ -15,7 +15,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-
+// Primary lapout control
 public class MainFrame extends JFrame{
 	private java.awt.Color userColor;
 	private ShowPanel panel2 = new ShowPanel();
@@ -29,12 +29,14 @@ public class MainFrame extends JFrame{
 		this.setSize(656, 200);
 		addElements();
 	}
+	
 	public MainFrame(String title) {
 		super(title);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(656, 200);
 		addElements();
 	}
+	   // add frame items
 	public void addElements(){
 		JMenuBar menubar=new JMenuBar();
 		JMenu fileMenu = new JMenu("File");
@@ -45,11 +47,13 @@ public class MainFrame extends JFrame{
 				System.exit(0);
 			}
 		});
+		
 		fileMenu.add(Exit);
 		menubar.add(fileMenu);
 		this.setJMenuBar(menubar);
 		setLayout(new FlowLayout()); 
 		
+		// add inner items
 		this.add(panel1,FlowLayout.LEFT);
 		this.add(panel2);
 		this.add(panel3);
@@ -60,15 +64,11 @@ public class MainFrame extends JFrame{
 		panel4.add(new Checkbox("Or me!"),BorderLayout.EAST);
 		this.add(panel4);
 	} 
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 		MainFrame main = new MainFrame("Interesting proggy");
 		main.setVisible(true);
 	}
 
 }
-//BorderLayout is north, south
-//FlowLayout
-//GridLayout
+
